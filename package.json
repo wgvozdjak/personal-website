@@ -13,6 +13,10 @@
     "@astrojs/mdx": "^0.10.2",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.0",
     "astro": "^1.1.0"
+  },
+  "dependencies": {
+    "@fontsource/josefin-sans": "^4.5.10"
   }
 }
