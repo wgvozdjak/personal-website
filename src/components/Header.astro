@@ -2,14 +2,13 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../config';
 import '@fontsource/josefin-sans/300.css';
+import '@fontsource/montserrat/400.css'
+import '@fontsource/ibm-plex-sans/500.css'
 ---
 
-<header class="py-4 flex w-full mb-4">
-	<nav class="font-josefin font-black flex flex-1">
-		<div class="relative float-left">
-			<HeaderLink href="/">{SITE_TITLE}</HeaderLink>
-		</div>
-		
+<header class="flex my-0 mx-auto py-4 w-full font-ibm-plex-sans font-medium">
+	<HeaderLink href="/">{SITE_TITLE}</HeaderLink>
+	<nav class="items-center flex flex-1 justify-end">		
 		<div class="float-right relative">
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>

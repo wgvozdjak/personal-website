@@ -17,6 +17,9 @@
     "astro": "^1.1.0"
   },
   "dependencies": {
-    "@fontsource/josefin-sans": "^4.5.10"
+    "@fontsource/ibm-plex-sans": "^4.5.12",
+    "@fontsource/inter": "^4.5.12",
+    "@fontsource/josefin-sans": "^4.5.10",
+    "@fontsource/montserrat": "^4.5.12"
   }
 }

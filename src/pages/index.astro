@@ -4,6 +4,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 import '@fontsource/josefin-sans/300.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/montserrat/700.css'
+import '@fontsource/montserrat/400.css'
 ---
 
 <!DOCTYPE html>
@@ -11,24 +16,20 @@ import '@fontsource/josefin-sans/300.css';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<div class="wrapper flex flex-col min-h-screen">
+	<body class="max-w-screen-lg dark:bg-slate-900">
+		<div class="flex flex-col min-h-screen">
 			<Header title={SITE_TITLE} />
 
-			<main class="px-4 mt-1/2 flex flex-1">
-				<div id="test" class="flex items-center flex-1 justify-center">
-					<div class="font-josefin float-left w-1/2">
-						<h1 class="font-light text-5xl">
-							hi! i'm
-						</h1>
-						<h1 class="text-8xl font-bold ml-10 -mt-4">
-							william.
-						</h1>
-					</div>
-
-					<div class="float-right w-1/2">
-						<img src="/test2.png" width="500px"/>
-					</div>
+			<main class="flex flex-col px-4 items-center mt-20">
+				<div class="flex items-center flex-col">
+					<h1 class="font-bold text-5xl inline-block mb-6 leading-snug font-ibm-plex-sans">
+						<span class="font-inter dark:text-slate-300">Hi! I'm </span>
+						<span class="bg-gradient-to-br from-sky-400 to-fuchsia-400 text-transparent bg-clip-text">William Gvozdjak</span>
+						<span class="font-bold text-4xl align-top leading-[4rem]">👋</span>
+					</h1>
+					<p class="font-ibm-plex-sans dark:text-slate-400 font-normal text-xl">
+						I'm a high-school student, web developer, mathlete, and programmer.
+					</p>
 				</div>
 			</main>
 		</div>
