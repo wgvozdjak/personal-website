@@ -67,3 +67,6 @@ blockquote {
 	margin: 0px;
 	font-style: italic;
 }
+* {
+	box-sizing: border-box;
+}
