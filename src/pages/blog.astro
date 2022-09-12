@@ -32,9 +32,12 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 			}
 		</style>
 	</head>
-	<body>
+	<body class="max-w-screen-lg dark:bg-slate-900">
 		<Header />
 		<main>
+			<section>
+				Blog
+			</section>
 			<section>
 				<ul>
 					{posts.map((post) => (
