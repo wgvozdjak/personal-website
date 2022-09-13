@@ -32,29 +32,33 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 			}
 		</style>
 	</head>
-	<body class="max-w-screen-lg dark:bg-slate-900">
-		<Header />
-		<main>
-			<section>
-				Blog
-			</section>
-			<section>
-				<ul>
-					{posts.map((post) => (
-						<li>
-							<time datetime={post.frontmatter.pubDate}>
-								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric',
-								})}
-							</time>
-							<a href={post.url}>{post.frontmatter.title}</a>
-						</li>
-					))}
-				</ul>
-			</section>
-			<Footer />
-		</main>
+	<body class="dark:bg-slate-900 mx-auto">
+		<div class="max-w-screen-lg mx-auto"><Header /></div>
+		
+		<section class="w-screen bg-blue-700 h-44 font-ibm-plex-sans dark:text-slate-300 font-bold text-5xl">
+			<div class="max-w-screen-lg mx-auto h-full"><div class="mx-auto w-full h-full flex items-center px-4">Blog</div></div>
+		</section>
+
+		<div class="max-w-screen-lg mx-auto mt-16">
+			<main class="px-4">
+				<section>
+					<ul>
+						{posts.map((post) => (
+							<li>
+								<time datetime={post.frontmatter.pubDate}>
+									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+										year: 'numeric',
+										month: 'short',
+										day: 'numeric',
+									})}
+								</time>
+								<a href={post.url}>{post.frontmatter.title}</a>
+							</li>
+						))}
+					</ul>
+				</section>
+				<Footer />
+			</main>
+		</div>
 	</body>
 </html>
