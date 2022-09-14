@@ -18,10 +18,10 @@ import '@fontsource/montserrat/400.css'
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="max-w-screen-lg dark:bg-slate-900">
-		<div class="flex flex-col">
+		<div class="flex flex-col min-h-screen">
 			<Header title={SITE_TITLE} />
 
-			<main class="flex flex-col px-4 items-center mt-10">
+			<main class="flex flex-col px-4 items-center mt-10 flex-1 justify-center">
 				<div class="grid">
 					<div class="flex items-center flex-col">
 						<h1 class="font-bold text-5xl inline-block mb-2 leading-snug font-ibm-plex-sans">
@@ -53,7 +53,7 @@ import '@fontsource/montserrat/400.css'
 							</a>
 						</div>
 						<div class="flex flex-col items-center">
-							<img class="mt-6 w-96" src="/homepageImage.png" />
+							<img height="224" class="mt-6 h-56" src="/homepageImage.png" />
 							<div class="mt-4 italic dark:text-slate-400 font-ibm-plex-sans text-sm">Illustration by <a class="text-blue-600 hover:text-blue-400 transition duration-200" href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a class="text-blue-600 hover:text-blue-400 transition duration-200" href="https://icons8.com/illustrations">Ouch!</a></div>
 						</div>
 					</div>
