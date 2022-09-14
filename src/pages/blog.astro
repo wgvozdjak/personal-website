@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/ibm-plex-sans/300.css'
+
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
@@ -35,24 +39,30 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	<body class="dark:bg-slate-900 mx-auto">
 		<div class="max-w-screen-lg mx-auto"><Header /></div>
 		
-		<section class="w-screen bg-blue-700 h-44 font-ibm-plex-sans dark:text-slate-300 font-bold text-5xl">
+		<section class="w-screen bg-sky-700 h-44 font-ibm-plex-sans dark:text-slate-300 font-bold text-5xl">
 			<div class="max-w-screen-lg mx-auto h-full"><div class="mx-auto w-full h-full flex items-center px-4">Blog</div></div>
 		</section>
 
 		<div class="max-w-screen-lg mx-auto mt-16">
 			<main class="px-4">
 				<section>
-					<ul>
+					<ul class="grid grid-cols-3 gap-4">
 						{posts.map((post) => (
 							<li>
-								<time datetime={post.frontmatter.pubDate}>
-									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-										year: 'numeric',
-										month: 'short',
-										day: 'numeric',
-									})}
-								</time>
-								<a href={post.url}>{post.frontmatter.title}</a>
+								<a class="font-ibm-plex-sans font-normal block w-full p-4 border-solid border-[1px] dark:border-slate-300 rounded-md hover:dark:border-sky-700 group transition duration-[150ms]" href={post.url}>
+									<h2 class="dark:text-slate-300 text-xl mb-2 group-hover:dark:text-sky-500 transition">{post.frontmatter.title}</h2>
+									<time class="dark:text-slate-500 group-hover:dark:text-sky-700 transition" datetime={post.frontmatter.pubDate}>
+										{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+											year: 'numeric',
+											month: 'short',
+											day: 'numeric',
+										})}
+									</time>
+									{/*<div class="dark:text-slate-300 mt-4 w-full">
+										{post.frontmatter.description}
+									</div>*/}
+									
+								</a>
 							</li>
 						))}
 					</ul>
