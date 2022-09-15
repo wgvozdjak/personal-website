@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-sans/600.css'
 import '@fontsource/ibm-plex-sans/400.css'
 import '@fontsource/ibm-plex-sans/300.css'
 
@@ -18,50 +19,39 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 <html lang="en-us">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #888;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
 	</head>
 	<body class="dark:bg-slate-900 mx-auto">
 		<div class="max-w-screen-lg mx-auto"><Header /></div>
 		
-		<section class="w-screen bg-sky-700 h-44 font-ibm-plex-sans dark:text-slate-300 font-bold text-5xl">
-			<div class="max-w-screen-lg mx-auto h-full"><div class="mx-auto w-full h-full flex items-center px-4">Blog</div></div>
+		<section class="w-full bg-sky-700 h-44 font-ibm-plex-sans">
+			<div class="max-w-screen-lg mx-auto h-full">
+				<div class="h-full flex justify-center px-4 flex-col">
+					<h1 class="font-bold dark:text-slate-300 text-5xl">Blog</h1>
+					<p class="font-normal italic text-xl dark:text-slate-400 mt-4">
+						Thoughts and musings about math, programming, and more.
+					</p>
+				</div>
+			</div>
 		</section>
 
-		<div class="max-w-screen-lg mx-auto mt-16">
+		<div class="max-w-screen-lg mx-auto mt-10">
 			<main class="px-4">
 				<section>
-					<ul class="grid grid-cols-3 gap-4">
+					<ul class="list-none grid grid-cols-3 gap-4">
 						{posts.map((post) => (
-							<li>
+							<li class="flex">
 								<a class="font-ibm-plex-sans font-normal block w-full p-4 border-solid border-[1px] dark:border-slate-300 rounded-md hover:dark:border-sky-700 group transition duration-[150ms]" href={post.url}>
-									<h2 class="dark:text-slate-300 text-xl mb-2 group-hover:dark:text-sky-500 transition">{post.frontmatter.title}</h2>
-									<time class="dark:text-slate-500 group-hover:dark:text-sky-700 transition" datetime={post.frontmatter.pubDate}>
+									<h2 class="dark:text-slate-300 text-xl group-hover:dark:text-sky-500 transition font-semibold">{post.frontmatter.title}</h2>
+									<time class="italic dark:text-slate-500 group-hover:dark:text-sky-700 transition" datetime={post.frontmatter.pubDate}>
 										{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
 											year: 'numeric',
 											month: 'short',
 											day: 'numeric',
 										})}
 									</time>
-									{/*<div class="dark:text-slate-300 mt-4 w-full">
+									<div class="group-hover:dark:text-sky-500 dark:text-slate-300 mt-2 w-full transition">
 										{post.frontmatter.description}
-									</div>*/}
-									
+									</div>
 								</a>
 							</li>
 						))}

@@ -3,6 +3,11 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-sans/600.css'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/ibm-plex-sans/300.css'
+
 export interface Props {
 	content: {
 		title: string;
@@ -22,10 +27,6 @@ const {
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
 			hr {
   				border-top: 1px solid #DDD;
 				margin: 1rem 0;
@@ -33,25 +34,28 @@ const {
 		</style>
 	</head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && (
-					<img
-						width={720}
-						height={360}
-						src={heroImage}
-						alt=""
-					/>
-				)}
-				<h1 class="title">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
-				<hr/>
-				<slot />
-			</article>
-		</main>
-		<Footer />
+	<body class="dark:bg-slate-900 mx-auto">
+		<div class="max-w-screen-lg mx-auto"><Header /></div>
+		
+		<section class="w-full bg-sky-700 h-44 font-ibm-plex-sans">
+			<div class="max-w-screen-lg mx-auto h-full">
+				<div class="h-full flex justify-center px-4 flex-col">
+					<h1 class="font-bold dark:text-slate-300 text-5xl">Blog Post: {title}</h1>
+					<p class="font-normal italic text-xl dark:text-slate-400 mt-4">
+						{pubDate && <time>Published on {pubDate}</time>}
+						{"test" && updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="max-w-screen-lg mx-auto mt-10">
+			<main class="px-4">
+				<article>
+					<div class="prose lg:prose-lg prose-slate dark:prose-invert max-w-screen-lg prose-a:no-underline hover:prose-a:underline prose-a:text-sky-700 font-ibm-plex-sans font-normal"><slot /></div>
+				</article>
+				<Footer />
+			</main>
+		</div>
 	</body>
 </html>

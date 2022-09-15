@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-sans/600.css'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/ibm-plex-sans/300.css'
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="dark:bg-slate-900 mx-auto">
+		<div class="max-w-screen-lg mx-auto"><Header /></div>
+		
+		<section class="w-full bg-sky-700 h-44 font-ibm-plex-sans">
+			<div class="max-w-screen-lg mx-auto h-full">
+				<div class="h-full flex justify-center px-4 flex-col">
+					<h1 class="font-bold dark:text-slate-300 text-5xl">About</h1>
+					<p class="font-normal italic text-xl dark:text-slate-400 mt-4">
+						Who I am and what I do.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="max-w-screen-lg mx-auto mt-10">
+			<main class="px-4">
+				<section>
+					<div class="dark:text-slate-300">Hi! I'm William, a high school junior from the greater Seattle area in Washington state. I'm fascinated by most things STEM, but I'm particularly interested in math and computer science. </div>
+				</section>
+				<Footer />
+			</main>
+		</div>
+	</body>
+</html>
