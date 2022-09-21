@@ -1,8 +1,6 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import CorePage from '../layouts/CorePage.astro';
 
 import '@fontsource/ibm-plex-sans/700.css'
 import '@fontsource/ibm-plex-sans/600.css'
@@ -13,52 +11,35 @@ import '@fontsource/ibm-plex-sans/300.css'
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
+
+const content = {
+	title: SITE_TITLE,
+	description: SITE_DESCRIPTION,
+	pageTitle: "Blog",
+	pageDescription: "Thoughts and musings about math, programming, and more.",
+}
 ---
 
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="dark:bg-slate-900 mx-auto">
-		<div class="max-w-screen-lg mx-auto"><Header /></div>
-		
-		<section class="w-full bg-sky-700 h-44 font-ibm-plex-sans">
-			<div class="max-w-screen-lg mx-auto h-full">
-				<div class="h-full flex justify-center px-4 flex-col">
-					<h1 class="font-bold dark:text-slate-300 text-5xl">Blog</h1>
-					<p class="font-normal italic text-xl dark:text-slate-400 mt-4">
-						Thoughts and musings about math, programming, and more.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<div class="max-w-screen-lg mx-auto mt-10 mb-10">
-			<main class="px-4">
-				<section>
-					<ul class="list-none grid grid-cols-3 gap-4">
-						{posts.map((post) => (
-							<li class="flex">
-								<a class="font-ibm-plex-sans font-normal block w-full p-4 border-solid border-[1px] dark:border-slate-300 rounded-md hover:dark:border-sky-700 group transition duration-[150ms]" href={post.url}>
-									<h2 class="dark:text-slate-300 text-xl group-hover:dark:text-sky-500 transition font-semibold">{post.frontmatter.title}</h2>
-									<time class="italic dark:text-slate-500 group-hover:dark:text-sky-700 transition" datetime={post.frontmatter.pubDate}>
-										{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-											year: 'numeric',
-											month: 'short',
-											day: 'numeric',
-										})}
-									</time>
-									<div class="group-hover:dark:text-sky-500 dark:text-slate-300 mt-2 w-full transition">
-										{post.frontmatter.description}
-									</div>
-								</a>
-							</li>
-						))}
-					</ul>
-				</section>
-				<Footer />
-			</main>
-		</div>
-	</body>
-</html>
+<CorePage content={content}>
+	<section>
+		<ul class="list-none grid grid-cols-3 gap-4">
+			{posts.map((post) => (
+				<li class="flex">
+					<a class="font-ibm-plex-sans font-normal block w-full p-4 border-solid border-[1px] dark:border-slate-300 rounded-md hover:dark:border-sky-700 group transition duration-[150ms]" href={post.url}>
+						<h2 class="dark:text-slate-300 text-xl group-hover:dark:text-sky-500 transition font-semibold">{post.frontmatter.title}</h2>
+						<time class="italic dark:text-slate-500 group-hover:dark:text-sky-700 transition" datetime={post.frontmatter.pubDate}>
+							{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+							})}
+						</time>
+						<div class="group-hover:dark:text-sky-500 dark:text-slate-300 mt-2 w-full transition">
+							{post.frontmatter.description}
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+	</section>
+</CorePage>
