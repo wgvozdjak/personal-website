@@ -9,15 +9,9 @@
 @tailwind utilities;
 
 body {
-	margin: auto;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
-	
+	@apply m-auto;
 }
+
 * {
-	box-sizing: border-box;
+	@apply box-border;
 }
