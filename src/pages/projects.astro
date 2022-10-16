@@ -1,53 +1,82 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
-import CorePage from '../layouts/CorePage.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import CorePage from "../layouts/CorePage.astro";
 
-import '@fontsource/ibm-plex-sans/700.css'
-import '@fontsource/ibm-plex-sans/600.css'
-import '@fontsource/ibm-plex-sans/400.css'
-import '@fontsource/ibm-plex-sans/300.css'
+import "@fontsource/ibm-plex-sans/700.css";
+import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/300.css";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./projects/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await Astro.glob("./projects/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 
 const content = {
-	title: SITE_TITLE,
-	description: SITE_DESCRIPTION,
-	pageTitle: "Projects",
-	pageDescription: "Various programming projects that I've worked on.",
-}
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  pageTitle: "Projects",
+  pageDescription: "Various programming projects that I've worked on.",
+};
 ---
 
 <CorePage content={content}>
-	<section>
-		<ul class="list-none grid grid-cols-3 gap-4">
-			{posts.map((post) => (
-				<li class="flex">
-					<a class="font-ibm-plex-sans font-normal block w-full p-4 border-solid border-[1px] dark:border-slate-300 rounded-md hover:dark:border-sky-700 group transition duration-[150ms]" href={post.url}>
-						<h2 class="dark:text-slate-300 text-xl dark:group-hover:text-sky-500 transition font-semibold">{post.frontmatter.title}</h2>
-						<time class="italic dark:text-slate-500 dark:group-hover:text-sky-700 transition" datetime={post.frontmatter.pubDate}>
-							{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-								year: 'numeric',
-								month: 'short',
-								day: 'numeric',
-							})}
-						</time>
-						<div class="dark:group-hover:text-sky-500 dark:text-slate-300 mt-2 w-full transition">
-							{post.frontmatter.description}
-						</div>
-                        <object class="mt-4">
-                            <a class="dark:text-sky-500" href={post.frontmatter.projectLink}>
-                                View project
-                                <svg class="w-5 h-5 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                                </svg>
-                            </a>
-                        </object>
-					</a>
-				</li>
-			))}
-		</ul>
-	</section>
+  <section>
+    <ul class="list-none grid grid-cols-3 gap-4">
+      {
+        posts.map((post) => (
+          <li class="flex">
+            <a
+              class="font-ibm-plex-sans font-normal block w-full p-4 border-solid border-[1px] dark:border-slate-300 rounded-md hover:dark:border-sky-700 group transition duration-[150ms]"
+              href={post.url}
+            >
+              <h2 class="dark:text-slate-300 text-xl dark:group-hover:text-sky-500 transition font-semibold">
+                {post.frontmatter.title}
+              </h2>
+              <time
+                class="italic dark:text-slate-500 dark:group-hover:text-sky-700 transition"
+                datetime={post.frontmatter.pubDate}
+              >
+                {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                  "en-us",
+                  {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  }
+                )}
+              </time>
+              <div class="dark:group-hover:text-sky-500 dark:text-slate-300 mt-2 w-full transition">
+                {post.frontmatter.description}
+              </div>
+              <object class="mt-4">
+                <a
+                  class="dark:text-sky-500"
+                  href={post.frontmatter.projectLink}
+                >
+                  View project
+                  <svg
+                    class="w-5 h-5 inline"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </a>
+              </object>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </CorePage>

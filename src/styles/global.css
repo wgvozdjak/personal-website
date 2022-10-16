@@ -9,9 +9,9 @@
 @tailwind utilities;
 
 body {
-	@apply m-auto;
+  @apply m-auto;
 }
 
 * {
-	@apply box-border;
+  @apply box-border;
 }
