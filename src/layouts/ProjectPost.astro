@@ -12,11 +12,12 @@ export interface Props {
     description: string;
     pubDate?: string;
     heroImage?: string;
+    projectLink: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, heroImage },
+  content: { title, description, pubDate, heroImage, projectLink },
 } = Astro.props;
 
 const postContent = {
@@ -24,14 +25,33 @@ const postContent = {
   description: description,
   pageTitle: "Project: " + title,
   pageDescription: "Published on " + pubDate,
+  projectLink: projectLink,
 };
 ---
 
 <CorePage content={postContent}>
   <article>
     <div
-      class="prose lg:prose-lg prose-slate dark:prose-invert max-w-screen-lg prose-a:no-underline hover:prose-a:underline prose-a:text-sky-700 font-ibm-plex-sans font-normal"
+      class="prose lg:prose-lg prose-slate dark:prose-invert max-w-screen-lg prose-a:no-underline hover:prose-a:underline prose-a:text-sky-500 font-ibm-plex-sans font-normal"
     >
+      <div>
+        <a class="italic" href={projectLink}
+          >Visit project
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 inline-block"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+          </svg>
+        </a>
+      </div>
       <slot />
     </div>
   </article>
