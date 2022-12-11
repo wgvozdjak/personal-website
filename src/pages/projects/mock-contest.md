@@ -1,9 +1,8 @@
 ---
 layout: "../../layouts/ProjectPost.astro"
-title: "First project"
-description: "Lorem ipsum dolor sit amet"
+title: "MAA Mock Contest Software"
+description: "A platform to mock contests from the MAA AMC series online"
 pubDate: "September 28, 2022"
-heroImage: "/placeholder-hero.jpg"
 projectLink: "https://enigmatology.github.io/mock-contest"
 ---
 
