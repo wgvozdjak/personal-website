@@ -1,0 +1,40 @@
+---
+// TODO: merge this with BlogPost.astro and ProjectPost.astro
+
+import CorePage from "../layouts/CorePage.astro";
+
+import "@fontsource/ibm-plex-sans/700.css";
+import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/300.css";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    pubDate?: string;
+    heroImage?: string;
+  };
+}
+
+const {
+  content: { title, description, pubDate, heroImage },
+} = Astro.props;
+
+const postContent = {
+  title: title,
+  description: description,
+  pageTitle: title,
+  pageDescription: description,
+};
+---
+
+<CorePage content={postContent}>
+  <article>
+    <div
+      class="prose lg:prose-lg prose-slate dark:prose-invert max-w-screen-lg prose-a:no-underline hover:prose-a:underline prose-a:text-sky-500 font-ibm-plex-sans font-normal"
+    >
+      <slot />
+    </div>
+  </article>
+</CorePage>
