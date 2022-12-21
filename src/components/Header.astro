@@ -8,8 +8,30 @@ import "@fontsource/ibm-plex-sans/500.css";
 
 <header class="flex my-0 mx-auto py-4 w-full font-ibm-plex-sans font-medium">
   <HeaderLink href="/">{SITE_TITLE}</HeaderLink>
-  <nav class="items-center flex flex-1 justify-end">
-    <div class="float-right relative">
+  <div class="flex-1 sm:hidden mt-2 mr-4">
+    <button id="open-navbar-btn" class="float-right">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 text-white"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </div>
+  <nav
+    id="navbar"
+    class="hidden sm:flex-1 sm:block absolute dark:bg-slate-900 right-4 top-16"
+  >
+    <div
+      class="border-2 border-solid border-white sm:float-right sm:relative flex flex-col"
+    >
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
@@ -22,3 +44,20 @@ import "@fontsource/ibm-plex-sans/500.css";
     </div>
   </nav>
 </header>
+
+<script>
+  function openNavbar() {
+    const navbar = document.getElementById("navbar");
+    if (navbar.classList.contains("hidden")) {
+      navbar.classList.remove("hidden");
+      navbar.classList.add("block");
+    } else {
+      navbar.classList.remove("block");
+      navbar.classList.add("hidden");
+    }
+  }
+
+  document
+    .getElementById("open-navbar-btn")
+    .addEventListener("click", openNavbar);
+</script>
