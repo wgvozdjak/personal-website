@@ -15,7 +15,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 );
 
 const content = {
-  title: SITE_TITLE,
+  title: "Blog • " + SITE_TITLE,
   description: SITE_DESCRIPTION,
   pageTitle: "Blog",
   pageDescription: "Thoughts and musings about math, programming, and more.",

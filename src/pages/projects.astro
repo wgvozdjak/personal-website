@@ -15,7 +15,7 @@ const posts = (await Astro.glob("./projects/*.{md,mdx}")).sort(
 );
 
 const content = {
-  title: SITE_TITLE,
+  title: "Projects • " + SITE_TITLE,
   description: SITE_DESCRIPTION,
   pageTitle: "Projects",
   pageDescription: "Various programming projects that I've worked on.",

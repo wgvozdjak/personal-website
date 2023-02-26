@@ -2,6 +2,7 @@
 // TODO: merge this with BlogPost.astro and ProjectPost.astro
 
 import CorePage from "../layouts/CorePage.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 import "@fontsource/ibm-plex-sans/700.css";
 import "@fontsource/ibm-plex-sans/600.css";
@@ -22,7 +23,7 @@ const {
 } = Astro.props;
 
 const postContent = {
-  title: title,
+  title: title + " • " + SITE_TITLE,
   description: description,
   pageTitle: title,
   pageDescription: description,
