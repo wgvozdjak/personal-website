@@ -24,12 +24,14 @@ const content = {
 
 <CorePage content={content}>
   <section>
-    <ul class="grid list-none grid-cols-3 gap-4">
+    <ul
+      class="list-none space-y-4 md:grid md:grid-cols-3 md:gap-4 md:space-y-0"
+    >
       {
         posts.map((post) => (
           <li class="flex">
             <a
-              class="group block w-full rounded-md border-[1px] border-solid p-4 font-ibm-plex-sans font-normal transition duration-[150ms] dark:border-slate-300 hover:dark:border-sky-700"
+              class="font-ibm-plex-sans group block w-full rounded-md border-[1px] border-solid p-4 font-normal transition duration-[150ms] dark:border-slate-300 hover:dark:border-sky-700"
               href={post.url}
             >
               <h2 class="text-xl font-semibold transition dark:text-slate-300 dark:group-hover:text-sky-500">

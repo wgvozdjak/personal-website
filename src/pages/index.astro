@@ -16,12 +16,22 @@ import "@fontsource/montserrat/400.css";
 <html lang="en-us" class="dark">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+    <style>
+      @media (max-width: 24rem) {
+        #homepage-image {
+          @apply w-full;
+        }
+      }
+    </style>
   </head>
   <body class="max-w-screen-lg dark:bg-slate-900">
     <div class="flex min-h-screen flex-col">
       <Header title={SITE_TITLE} />
 
-      <main class="flex flex-1 flex-col items-center justify-center px-4">
+      <main
+        class="flex flex-1 flex-col items-center justify-center px-8 sm:px-4"
+      >
         <div class="grid">
           <div class="flex flex-col items-center">
             <h1
@@ -42,7 +52,7 @@ import "@fontsource/montserrat/400.css";
               programmer.
             </p>
             <div
-              class="flex flex-row space-x-6 font-ibm-plex-sans text-base font-medium"
+              class="hidden flex-row space-x-6 font-ibm-plex-sans text-base font-medium sm:flex"
             >
               <a
                 href="/about"
@@ -106,7 +116,12 @@ import "@fontsource/montserrat/400.css";
               </a>
             </div>
             <div class="flex flex-col items-center">
-              <img height="224" class="mt-6 h-56" src="/homepageImage.png" />
+              <img
+                height="224"
+                id="homepage-image"
+                class="mt-6 w-96"
+                src="/homepageImage.png"
+              />
               <div
                 class="mt-4 font-ibm-plex-sans text-sm italic dark:text-slate-400"
               >

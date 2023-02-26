@@ -33,7 +33,7 @@ const {
 
     <section class="h-44 w-full bg-sky-700 font-ibm-plex-sans">
       <div class="mx-auto h-full max-w-screen-lg">
-        <div class="flex h-full flex-col justify-center px-4">
+        <div class="flex h-full flex-col justify-center px-8 sm:px-4">
           <h1 class="text-5xl font-bold dark:text-slate-300">{pageTitle}</h1>
           <p class="mt-4 text-xl font-normal italic dark:text-slate-400">
             {pageDescription}
@@ -43,7 +43,7 @@ const {
     </section>
 
     <div class="mx-auto mt-10 mb-10 max-w-screen-lg">
-      <main class="px-4">
+      <main class="px-8 sm:px-4">
         <slot />
         <Footer />
       </main>
