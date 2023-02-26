@@ -15,7 +15,9 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/typography": "^0.5.7",
-    "astro": "^1.1.0"
+    "astro": "^1.1.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.5.12",

@@ -6,17 +6,19 @@ import "@fontsource/montserrat/400.css";
 import "@fontsource/ibm-plex-sans/500.css";
 ---
 
-<header class="flex my-0 mx-auto py-4 w-full font-ibm-plex-sans font-medium">
-  <HeaderLink href="/">{SITE_TITLE}</HeaderLink>
-  <div class="flex-1 sm:hidden mt-2 mr-4">
-    <button id="open-navbar-btn" class="float-right">
+<header
+  class="my-0 mx-auto flex w-full py-4 px-4 font-ibm-plex-sans font-medium sm:px-0"
+>
+  <HeaderLink class="order-last sm:-order-1" href="/">{SITE_TITLE}</HeaderLink>
+  <div class="float-left mt-2 mr-4 flex-1 sm:hidden">
+    <button id="open-navbar-btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6 text-white"
+        class="h-6 w-6 text-white"
       >
         <path
           stroke-linecap="round"
@@ -27,11 +29,12 @@ import "@fontsource/ibm-plex-sans/500.css";
   </div>
   <nav
     id="navbar"
-    class="hidden sm:flex-1 sm:block absolute dark:bg-slate-900 right-4 top-16"
+    class="absolute right-4 top-16 hidden dark:bg-slate-900 sm:relative sm:right-0 sm:top-0 sm:block sm:flex-1"
   >
     <div
-      class="border-2 border-solid border-white sm:float-right sm:relative flex flex-col"
+      class="flex flex-col border-2 border-solid border-white sm:relative sm:float-right sm:block sm:border-none"
     >
+      <HeaderLink href="/" class="sm:hidden">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
