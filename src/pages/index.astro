@@ -18,35 +18,35 @@ import "@fontsource/montserrat/400.css";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="max-w-screen-lg dark:bg-slate-900">
-    <div class="flex flex-col min-h-screen">
+    <div class="flex min-h-screen flex-col">
       <Header title={SITE_TITLE} />
 
-      <main class="flex flex-col px-4 items-center flex-1 justify-center">
+      <main class="flex flex-1 flex-col items-center justify-center px-4">
         <div class="grid">
-          <div class="flex items-center flex-col">
+          <div class="flex flex-col items-center">
             <h1
-              class="font-bold text-5xl inline-block mb-2 leading-snug font-ibm-plex-sans"
+              class="mb-2 inline-block font-ibm-plex-sans text-5xl font-bold leading-snug"
             >
               <span class="font-inter dark:text-slate-300">Hi! I'm</span>
               <span
-                class="bg-gradient-to-br from-sky-400 to-fuchsia-400 text-transparent bg-clip-text"
+                class="bg-gradient-to-br from-sky-400 to-fuchsia-400 bg-clip-text text-transparent"
                 >William Gvozdjak</span
               >
-              <span class="font-bold text-4xl align-top leading-[4rem]">👋</span
+              <span class="align-top text-4xl font-bold leading-[4rem]">👋</span
               >
             </h1>
             <p
-              class="font-ibm-plex-sans dark:text-slate-400 font-normal text-xl mb-6"
+              class="mb-6 font-ibm-plex-sans text-xl font-normal dark:text-slate-400"
             >
               I'm a high-school student, web developer, mathlete, and
               programmer.
             </p>
             <div
-              class="flex flex-row font-medium font-ibm-plex-sans space-x-6 text-base"
+              class="flex flex-row space-x-6 font-ibm-plex-sans text-base font-medium"
             >
               <a
                 href="/about"
-                class="px-6 py-3 bg-blue-600 hover:bg-blue-800 rounded text-slate-300 cursor-pointer shadow-lg transition duration-200"
+                class="cursor-pointer rounded bg-blue-600 px-6 py-3 text-slate-300 shadow-lg transition duration-200 hover:bg-blue-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ import "@fontsource/montserrat/400.css";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="inline w-[17px] h-[17px] -ml-1 mb-[2px]"
+                  class="-ml-1 mb-[2px] inline h-[17px] w-[17px]"
                 >
                   <path
                     stroke-linecap="round"
@@ -66,7 +66,7 @@ import "@fontsource/montserrat/400.css";
               </a>
               <a
                 href="/projects"
-                class="px-6 py-3 bg-blue-600 hover:bg-blue-800 rounded text-slate-300 cursor-pointer shadow-lg transition duration-200"
+                class="cursor-pointer rounded bg-blue-600 px-6 py-3 text-slate-300 shadow-lg transition duration-200 hover:bg-blue-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ import "@fontsource/montserrat/400.css";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="inline w-[17px] h-[17px] -ml-1 mb-[2px]"
+                  class="-ml-1 mb-[2px] inline h-[17px] w-[17px]"
                 >
                   <path
                     stroke-linecap="round"
@@ -86,7 +86,7 @@ import "@fontsource/montserrat/400.css";
               </a>
               <a
                 href="/blog"
-                class="px-6 py-3 bg-blue-600 hover:bg-blue-800 rounded text-slate-300 cursor-pointer shadow-lg transition duration-200"
+                class="cursor-pointer rounded bg-blue-600 px-6 py-3 text-slate-300 shadow-lg transition duration-200 hover:bg-blue-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ import "@fontsource/montserrat/400.css";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="inline w-[17px] h-[17px] -ml-1 mb-[2px]"
+                  class="-ml-1 mb-[2px] inline h-[17px] w-[17px]"
                 >
                   <path
                     stroke-linecap="round"
@@ -108,15 +108,16 @@ import "@fontsource/montserrat/400.css";
             <div class="flex flex-col items-center">
               <img height="224" class="mt-6 h-56" src="/homepageImage.png" />
               <div
-                class="mt-4 italic dark:text-slate-400 font-ibm-plex-sans text-sm"
+                class="mt-4 font-ibm-plex-sans text-sm italic dark:text-slate-400"
               >
                 Illustration by <a
-                  class="text-blue-600 hover:text-blue-400 transition duration-200"
+                  class="text-blue-600 transition duration-200 hover:text-blue-400"
                   href="https://icons8.com/illustrations/author/zD2oqC8lLBBA"
                   >Icons 8</a
                 > from <a
-                  class="text-blue-600 hover:text-blue-400 transition duration-200"
-                  href="https://icons8.com/illustrations">Ouch!</a>
+                  class="text-blue-600 transition duration-200 hover:text-blue-400"
+                  href="https://icons8.com/illustrations">Ouch!</a
+                >
               </div>
             </div>
           </div>
