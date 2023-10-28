@@ -17,4 +17,4 @@ Here are some basic features that this site has:
 - User authentication to save all past results and answer choices
 - An easy-to-use UI to view all of your past tests
 
-This site is somewhat irrelevant now given that the MAA has moved on from the AoPS platform to their own website, but it may still be a somewhat helpful resource to practice tests online (even if it doesn't completely match the current testing conditions).
+This site is somewhat irrelevant now given that the MAA has moved on from the AoPS platform to their own website, but it may still be a helpful resource to practice tests online (even if it doesn't completely match the current testing conditions).
