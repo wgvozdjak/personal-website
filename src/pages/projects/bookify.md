@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/ProjectPost.astro"
 title: "Bookify"
-description: "An improved reading tracker, including both book tracking and reading analysis features"
+description: "An improved reading tracker, including both book tracking and analysis features"
 pubDate: "October 28, 2023"
 projectLink: "https://github.com/wgvozdjak/bookify"
 ---
