@@ -2,7 +2,7 @@
 layout: "../../layouts/ProjectPost.astro"
 title: "Geopainter"
 description: "A C++ 3D graphics library, built using geometric algebra"
-pubDate: "October 28, 2023"
+pubDate: "April 7, 2023"
 projectLink: "https://github.com/wgvozdjak/geopainter"
 ---
 
